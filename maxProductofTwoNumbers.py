@@ -18,7 +18,7 @@ def max_product(arr):
     return (max(final_array))
 
 arr = [1,7,3,4,9,5]
-max_product(arr)
+# max_product(arr)
 
 
 # Write a function called middle that takes a list and returns a new list that contains all but the first and last elements.
@@ -30,7 +30,7 @@ def middleList(lst):
     return lst[1:-1]
 
 myList = [1,2,3,4]
-print(middleList(myList))
+# print(middleList(myList))
 
 # Given 2D list calculate the sum of diagonal elements.
 # Example
@@ -47,4 +47,28 @@ def diagonal_sum(matrix):
 
 
 matrix_2d = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-print(diagonal_sum(matrix_2d))
+# print(diagonal_sum(matrix_2d))
+
+# Given a list, write a function to get first, second best scores from the list.
+# List may contain duplicates.
+# Example
+# myList = [84,85,86,87,85,90,85,83,23,45,84,1,2,0]
+# first_second(myList) # 90 87
+
+def first_second(my_list):
+    major_number = max(my_list)
+    my_list.remove(major_number)
+    second_major_number = max(my_list)
+    # print(second_major_number)
+    return major_number, second_major_number
+    # return my_list
+
+myList = [84,85,86,87,85,90,85,83,23,45,84,1,2,0]
+# print(first_second(myList))
+
+def remove_diplicates(arr):
+    pure_list = list(set(arr))
+    return pure_list
+
+danger_arr = [1,1,2,2,3,4,4,5]
+# print(remove_diplicates(danger_arr))
