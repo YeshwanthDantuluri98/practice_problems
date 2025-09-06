@@ -29,4 +29,20 @@ def sumOfTwoNumbers(array,total):
         check_num[num] = i
 
 
-sumOfTwoNumbers([2,6,3,9,11],9)
+# print(sumOfTwoNumbers([2,6,3,9,11],9))
+
+def pair_sum(myList, sum):
+    pair_list = []
+    seen = set()
+
+    for i in range(len(myList)):
+        for j in range(i+1, len(myList)):
+            if myList[i] + myList[j] == sum and (myList[i], myList[j]) not in seen:
+                pair_list.append(f'{myList[i]}+{myList[j]}')
+                seen.add((myList[i],myList[j]))
+
+    return pair_list
+
+
+
+# print(pair_sum([2,4,3,5,6,-2,4,7,8,9],7))
