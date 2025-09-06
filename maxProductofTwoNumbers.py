@@ -72,3 +72,28 @@ def remove_diplicates(arr):
 
 danger_arr = [1,1,2,2,3,4,4,5]
 # print(remove_diplicates(danger_arr))
+
+
+#method -1
+def contains_duplicates(nums_arr):
+    seen = set()
+    for num in nums_arr:
+        if num in seen:
+            return True
+        seen.add(num)
+
+    return False
+
+# print(contains_duplicates([1,2,3,1]))
+
+#method -2
+def contains_duplicates2(nums_arr):
+    new_arr = list(set(nums_arr))
+    send_value = False
+    if len(nums_arr) != len(new_arr):
+        send_value = True
+
+    return send_value
+
+# print(contains_duplicates2([1,2,3,1,3]))
+    
