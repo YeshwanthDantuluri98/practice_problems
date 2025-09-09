@@ -77,3 +77,49 @@ def reverse_dict(my_dict):
     return new_dict
 
 print(reverse_dict({'a':1, 'b':2, 'c':3}))
+
+#problem-5
+# Conditional Filter
+# Define a function that takes a dictionary as a parameter and returns a dictionary with elements based on a condition.
+# Example:
+# my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+# filtered_dict = filter_dict(my_dict, lambda k, v: v % 2 == 0)
+# Output:
+# {'b': 2, 'd': 4}
+
+def filter_dict(my_dict, condition):
+    return {k: v for k, v in my_dict.items() if condition(k, v)}
+
+
+my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+filtered_dict = filter_dict(my_dict, lambda k, v: v % 2 == 0)
+
+print(filtered_dict)
+
+#Problem-6
+# Same Frequency
+# Define a function which takes two lists as parameters and check if two given lists have the same frequency of elements.
+#
+# Example:
+# list1 = [1, 2, 3, 2, 1]
+# list2 = [3, 1, 2, 1, 3]
+# check_same_frequency(list1, list2)
+# Output:
+# False
+
+def check_same_frequency(list1,list2):
+    if len(list1) != len(list2):
+        return False
+    freq1={}
+    freq2={}
+    for item in list1:
+        freq1[item] = freq1.get(item, 0) +1
+
+    for item in list2:
+        freq2[item] = freq2.get(item, 0)+1
+
+    return freq1 == freq2
+
+list1 = [1,2,3,2,1]
+list2 = [3,1,2,1,3]
+check_same_frequency(list1,list2)
